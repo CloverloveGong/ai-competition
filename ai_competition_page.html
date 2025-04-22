@@ -1,13 +1,283 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 8px 10px;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+    }
+    nav a.active {
+      background: #D32F2F;
+      color: #fff !important;
+    }
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>智创未来 · AI赋能校园智能体大赛</title>
-  <!-- 这里省略样式和其他内容 -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #D32F2F, #B71C1C);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+    .hero p {
+      font-size: 1.6em;
+      color: #ffffffcc;
+    }
+    .countdown-block {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      text-align: center;
+    }
+    .countdown-item .value {
+      font-size: 3em;
+      font-weight: bold;
+      color: #D32F2F;
+    }
+    .countdown-item .label {
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>页面加载中...</h1>
-  <!-- 实际完整内容已在canvas -->
+  <nav style="position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); display: flex; justify-content: center; gap: 20px; padding: 12px 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <a href="#about" style="color: #D32F2F; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; transition: background 0.3s;">比赛简介</a>
+    <a href="#tracks" style="color: #D32F2F; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; transition: background 0.3s;">赛事赛道</a>
+    <a href="#rewards" style="color: #D32F2F; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; transition: background 0.3s;">奖项设置</a>
+    <a href="#schedule" style="color: #D32F2F; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; transition: background 0.3s;">赛程安排</a>
+    <a href="#register" style="color: #D32F2F; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; transition: background 0.3s;">报名方式</a>
+  </nav>
+  <div id="particles-js"></div>
+  <div class="hero">
+    <h1>通友杯 · 智创未来</h1>
+    <p>AI赋能九江学院 2025 校园智能体大赛</p>
+    <div class="countdown-block">
+      <div class="countdown-item">
+        <div class="value" id="days">00</div>
+        <div class="label">天</div>
+      </div>
+      <div class="countdown-item">
+        <div class="value" id="hours">00</div>
+        <div class="label">小时</div>
+      </div>
+      <div class="countdown-item">
+        <div class="value" id="minutes">00</div>
+        <div class="label">分钟</div>
+      </div>
+      <div class="countdown-item">
+        <div class="value" id="seconds">00</div>
+        <div class="label">秒</div>
+      </div>
+    </div>
+</div>
+
+<!-- 比赛简介模块 -->
+<section id="about" class="fade-in" style="padding: 60px 10%; background: #fff; display: flex; justify-content: center; align-items: center; text-align: center; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+  <div style="background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 40px; max-width: 1100px; width: 100%; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';">
+    <h2 style="color: #D32F2F; font-size: 2em;">比赛简介</h2>
+  <p style="max-width: 800px; margin: auto; line-height: 1.8em; font-size: 1.1em;">随着AI技术飞速发展，智能体（Agent）技术正成为下一代人工智能的重要应用方向。本赛事旨在引导学生深入理解Agent开发，激发创新热情，推动校企合作，共同打造人工智能实践新高地。</p>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- 赛道设置模块 -->
+<section id="tracks" class="fade-in" style="padding: 60px 10%; background: #fff; display: flex; justify-content: center; align-items: center; text-align: center; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+  <div style="background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 40px; max-width: 1100px; width: 100%; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';">
+    <h2 style="color: #D32F2F; font-size: 2em;">三大赛道设置</h2>
+    <ul style="list-style: none; padding: 0; max-width: 800px; margin: auto; font-size: 1.1em; line-height: 2em; text-align: left;">
+      <li><strong>🎨 艺术创作赛道：</strong> 探索AI在创意设计、广告媒体中的应用。</li>
+      <li><strong>🛠 实用工具赛道：</strong> 打造真实解决痛点的AI工具，鼓励AI x 硬件结合。</li>
+      <li><strong>🧠 创意脑洞赛道：</strong> 以创意为驱动，强调交互体验和可玩性。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 奖项设置模块 -->
+<section id="schedule" class="fade-in" style="padding: 60px 5%; background: #fff; opacity: 0; transform: translateY(40px); transition: all 0.8s ease; display: flex; justify-content: center;">
+  <div style="background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 40px; width: 100%; max-width: 1100px; text-align: center; overflow-x: auto;">
+    <h2 style="color: #D32F2F; font-size: 2em; margin-bottom: 30px;">赛事时间表</h2>
+    <div style="display: flex; justify-content: flex-start; align-items: stretch; gap: 20px; padding: 20px 0; margin: 0 auto; flex-wrap: nowrap; width: max-content; overflow-x: auto; scroll-behavior: smooth;">
+      <div style="flex: 1 1 150px; text-align: center; max-width: 160px;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">5月1日-15日</strong>
+          <p style="font-size: 0.95em; color: #555;">线上报名开放</p>
+        </div>
+      </div>
+      <div style="flex: 1 1 150px; text-align: center; max-width: 160px;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">5月20日</strong>
+          <p style="font-size: 0.95em; color: #555;">技术培训与讲座</p>
+        </div>
+      </div>
+      <div style="flex: 0 0 auto; text-align: center;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">6月15日</strong>
+          <p style="font-size: 0.95em; color: #555;">初赛评审，晋级30强</p>
+        </div>
+      </div>
+      <div style="flex: 0 0 auto; text-align: center;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">6月20日</strong>
+          <p style="font-size: 0.95em; color: #555;">复赛作品开发，选出8强</p>
+        </div>
+      </div>
+      <div style="flex: 0 0 auto; text-align: center;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">7月1日</strong>
+          <p style="font-size: 0.95em; color: #555;">决赛现场答辩与演示</p>
+        </div>
+      </div>
+      <div style="flex: 0 0 auto; text-align: center;">
+        <div style="width: 16px; height: 16px; background: #D32F2F; border-radius: 50%; margin: auto;"></div>
+        <div style="margin-top: 10px; padding: 20px; background: #fff0f0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); height: 140px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <strong style="color:#D32F2F; font-size: 1.1em;">7月10日</strong>
+          <p style="font-size: 0.95em; color: #555;">优秀成果展示与孵化对接</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+<section id="register" class="fade-in" style="padding: 60px 10%; background: #fff; display: flex; justify-content: center; align-items: center; text-align: center; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+  <div style="background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 40px; max-width: 900px; width: 100%; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';">
+    <h2 style="color: #D32F2F; font-size: 2em;">报名方式</h2>
+  <p style="max-width: 800px; margin: auto; line-height: 1.8em; font-size: 1.1em;">面向九江学院全体在校生（本专科及研究生），支持跨专业、跨学科组队（2-5人），每队可有1位校内导师。</p>
+  <p style="max-width: 800px; margin: 20px auto 0; line-height: 1.8em; font-size: 1.1em;">提交内容包括：技术文档、原型视频、展示PPT。</p>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
+
+    const updateCountdown = () => {
+      const deadline = new Date("2025-05-01T00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = deadline - now;
+      if (diff <= 0) return;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+<script>
+  // 平滑滚动 + 高亮导航
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+      const offset = section.offsetTop - 100;
+      if (scrollY >= offset) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+        link.style.background = '#D32F2F';
+        link.style.color = '#fff';
+      } else {
+        link.style.background = 'transparent';
+        link.style.color = '#D32F2F';
+      }
+    });
+  });
+
+  // 平滑滚动跳转
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<button id="backToTop" style="position: fixed; bottom: 40px; right: 30px; background: #D32F2F; color: #fff; padding: 12px 16px; border-radius: 30px; border: none; font-size: 14px; cursor: pointer; z-index: 9999; display: none; transition: opacity 0.3s ease;">🔼 顶部</button>
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+<script>
+  // 动态显现动画
+  const fadeSections = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeSections.forEach(sec => observer.observe(sec));
+</script>
 </body>
 </html>
